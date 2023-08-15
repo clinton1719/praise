@@ -1,0 +1,16 @@
+{
+  "name": "integration-test",
+  "version": "1.0.0",
+  "description": "Folder for cypress tests",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "axe-core": "^4.7.2",
+    "cypress": "^12.17.3",
+    "cypress-axe": "^1.4.0"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run:local": "cypress run http://localhost:3000 --browser chrome"
+  }
+}
