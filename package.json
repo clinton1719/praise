@@ -1,0 +1,12 @@
+{
+  "name": "praise",
+  "version": "1.0.0",
+  "description": "Project for reviewing Github pull requests",
+  "main": "index.js",
+  "repository": "https://github.com/clinton1719/praise.git",
+  "author": "clinton1719 <clintoncleetus17@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix --ext .js, .tsx, .ts, .json"
+  }
+}
