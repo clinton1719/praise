@@ -2,5 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* BODY OF APP */
+.body {
+  @apply font-mono flex flex-col justify-center items-center bg-[#3e3e42] min-h-screen text-2xl;
+}
+
+.main {
+  @apply flex flex-col items-center min-w-[90%] min-h-screen rounded-md bg-gradient-to-br from-[#06456e] to-[#007acc] bg-opacity-25 py-5 px-5 my-5 shadow-2xl;
+}
+
+.action {
+  @apply flex flex-col items-center justify-center min-w-[80%] min-h-screen;
+}
+
+.actionItem {
+  @apply py-2;
+}
+
+/* Footer  */
+.footer {
+  @apply font-mono flex flex-col items-center text-lg;
 }
