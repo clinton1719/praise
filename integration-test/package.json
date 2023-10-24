@@ -11,6 +11,6 @@
   },
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run:local": "cypress run http://localhost:3000 --browser chrome"
+    "cypress:run:local": "cypress run http://localhost:3000 --headless --browser firefox"
   }
 }

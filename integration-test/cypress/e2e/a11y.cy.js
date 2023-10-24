@@ -23,7 +23,17 @@ describe('Check Homepage', () => {
     cy.visit('/');
     cy.injectAxe();
   });
-  it('Check general Home Page', () => {
+  it('Should pass accessibility tests', () => {
+    cy.checkA11y(null, null, terminalLog);
+  });
+});
+
+describe('Check View PR page', () => {
+  beforeEach(() => {
+    cy.visit('/view_pr');
+    cy.injectAxe();
+  });
+  it('Should pass accessibility tests', () => {
     cy.checkA11y(null, null, terminalLog);
   });
 });

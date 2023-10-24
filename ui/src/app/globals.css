@@ -12,11 +12,11 @@
 }
 
 .action {
-  @apply flex flex-col items-center justify-center min-w-[80%] min-h-screen;
+  @apply flex flex-col items-center justify-center space-y-16 min-w-[80%] min-h-screen;
 }
 
 .actionItem {
-  @apply py-2;
+  @apply px-4 py-4 border-4 rounded-lg border-[#3e3e42];
 }
 
 /* Footer  */
