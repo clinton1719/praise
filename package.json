@@ -6,6 +6,7 @@
   "repository": "https://github.com/clinton1719/praise.git",
   "author": "clinton1719 <clintoncleetus17@gmail.com>",
   "license": "MIT",
+  "private": "true",
   "workspaces": {
     "packages": [
       "integration-test",
