@@ -1,10 +1,7 @@
 const fetchPRs = async () => {
-  const response = await fetch(
-    'https://api.github.com/repos/aws/aws-cdk/pulls',
-    {
-      method: 'GET',
-    }
-  );
+  const response = await fetch(process.env.NEXT_PUBLIC_VIEW_PR_URL!, {
+    method: 'GET',
+  });
 
   return response.json();
 };

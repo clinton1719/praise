@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'PRaise',
   description: 'author: Clinton Fernandes',
+  icons: '/favicon.ico',
 };
 
 export default function RootLayout({

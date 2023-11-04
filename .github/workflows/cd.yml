@@ -28,6 +28,3 @@ jobs:
 
       - name: Run Build
         run: yarn workspace ui build
-
-      # - name: Run tests
-      #   run: yarn test
