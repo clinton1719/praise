@@ -1,6 +1,6 @@
 // Fetch all PR's
 const fetchPRs = async () => {
-  const response = await fetch(process.env.NEXT_PUBLIC_VIEW_PR_URL!, {
+  const response = await fetch(process.env.VIEW_PR_URL!, {
     method: 'GET',
   });
 

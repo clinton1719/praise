@@ -23,3 +23,15 @@
 .footer {
   @apply font-mono flex flex-col items-center text-lg;
 }
+
+/* Add PR Section */
+.addSection {
+  @apply mt-5;
+}
+
+.inputPr {
+  @apply appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none;
+}
+.addPr {
+  @apply flex-shrink-0 border-transparent border-4 text-white hover:font-bold text-lg py-1 px-2 rounded;
+}
