@@ -1,10 +1,4 @@
-const fetchPRs = async () => {
-  const response = await fetch(global.process.env.NEXT_PUBLIC_VIEW_PR_URL!, {
-    method: 'GET',
-  });
-
-  return response.json();
-};
+import { fetchPRs } from './apiCalls';
 
 const ViewPRs = async () => {
   const response: any = await fetchPRs();
