@@ -1,4 +1,4 @@
-import { fetchPRs } from './apiCalls';
+import { fetchPRs } from '../../serviceLayer/apiCalls';
 
 const ViewPRs = async () => {
   const response: any = await fetchPRs();
