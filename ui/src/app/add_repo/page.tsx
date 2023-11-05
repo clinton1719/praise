@@ -1,5 +1,9 @@
-//Testing
+'use client';
+import { useState } from 'react';
+import { addRepo } from '../../serviceLayer/apiCalls';
+
 const AddRepo = () => {
+  const [repoName, setRepoName] = useState('');
   return (
     <>
       <div className="addSection">
@@ -10,8 +14,14 @@ const AddRepo = () => {
               type="text"
               placeholder="Add Repo name"
               aria-label="Repo Name"
+              value={repoName}
+              onChange={(e) => setRepoName(e.target.value)}
             />
-            <button className="addPr" type="button">
+            <button
+              className="addPr"
+              type="button"
+              onClick={() => addRepo(repoName)}
+            >
               Add
             </button>
           </div>

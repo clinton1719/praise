@@ -1,7 +1,7 @@
 import { fetchPRs } from '../../serviceLayer/apiCalls';
 
 const ViewPRs = async () => {
-  const response: any = await fetchPRs();
+  const response: Array<any> = await fetchPRs();
   return (
     <>
       <div>View PR</div>

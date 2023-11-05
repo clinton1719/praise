@@ -20,12 +20,12 @@ export async function getSessionIdAndCreateIfMissing(): Promise<
   string | undefined
 > {
   await kv.set('user_1_session', 'session_token_value');
-  const sessionId = getSessionId();
+  const sessionId = await getSessionId();
   if (!sessionId) {
     const newSessionId =
       Math.random().toString(36).substring(2, 15) +
       Math.random().toString(36).substring(2, 15);
-    setSessionId(newSessionId);
+    await setSessionId(newSessionId);
 
     return newSessionId;
   }
@@ -38,8 +38,8 @@ export async function getSessionIdAndCreateIfMissing(): Promise<
 export async function getSessionValue(
   key: string,
   namespace: string = ''
-): Promise<string | undefined | null> {
-  const sessionId = getSessionId();
+): Promise<object | undefined | null> {
+  const sessionId = await getSessionId();
   if (!sessionId) {
     return null;
   }
@@ -49,7 +49,7 @@ export async function getSessionValue(
 export async function getAllSessionValues(
   namespace: string = ''
 ): Promise<Record<string, unknown> | null> {
-  const sessionId = getSessionId();
+  const sessionId = await getSessionId();
   if (!sessionId) {
     return null;
   }
@@ -58,10 +58,10 @@ export async function getAllSessionValues(
 
 export async function setSessionValue(
   key: string,
-  value: string,
+  value: object,
   namespace: string = ''
 ): Promise<number> {
-  const sessionId = getSessionIdAndCreateIfMissing();
+  const sessionId = await getSessionIdAndCreateIfMissing();
   return kv.hset(`session-${namespace}-${sessionId}`, { [key]: value });
 }
 
