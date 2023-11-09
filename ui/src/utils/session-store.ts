@@ -58,7 +58,7 @@ export async function getAllSessionValues(
 
 export async function setSessionValue(
   key: string,
-  value: object,
+  value: object | null,
   namespace: string = ''
 ): Promise<number> {
   const sessionId = await getSessionIdAndCreateIfMissing();

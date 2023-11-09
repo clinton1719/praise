@@ -8,7 +8,7 @@
 }
 
 .main {
-  @apply flex flex-col items-center min-w-[90%] min-h-screen rounded-md bg-gradient-to-br from-[#06456e] to-[#007acc] bg-opacity-25 py-5 px-5 my-5 shadow-2xl;
+  @apply flex flex-col items-center min-w-[90%] min-h-screen rounded-md bg-gradient-to-br from-[#06456e] to-[#007acc] bg-opacity-25 py-5 px-5 my-5 shadow-2xl border-4 border-white max-w-[90%];
 }
 
 .action {
@@ -16,7 +16,7 @@
 }
 
 .actionItem {
-  @apply px-4 py-4 border-4 rounded-lg border-[#3e3e42];
+  @apply px-4 py-4 border-4 rounded-lg text-white border-white hover:text-inherit hover:bg-white;
 }
 
 /* Footer  */
@@ -26,12 +26,40 @@
 
 /* Add PR Section */
 .addSection {
-  @apply mt-5;
+  @apply mt-5 flex flex-col items-center justify-normal min-w-[90%] min-h-screen text-white;
 }
 
 .inputPr {
-  @apply appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none;
+  @apply appearance-none bg-transparent border-none w-full  mr-3 py-1 px-2 leading-tight focus:outline-none;
 }
-.addPr {
-  @apply flex-shrink-0 border-transparent border-4 text-white hover:font-bold text-lg py-1 px-2 rounded;
+.addPrButton {
+  @apply flex-shrink-0 border-white border-4  hover:font-bold text-lg py-1 px-2 rounded mr-3;
+}
+.repoItem {
+  @apply flex pt-8 ml-0 mr-4;
+}
+.repoText {
+  @apply text-gray-100 pt-8 pb-4 underline shadow-neutral-600 text-xl;
+}
+.uListForRepos {
+  @apply pt-6 flex flex-col;
+}
+.removeRepo {
+  @apply mr-0 flex flex-shrink-0 border-white border-4  hover:font-bold text-lg py-1 px-2 rounded bg-red-500;
+}
+.repoSection {
+  @apply flex flex-row items-end justify-between;
+}
+
+/* View PR Section */
+.viewPRSection {
+  @apply mt-5 flex flex-col items-center justify-normal max-w-[90%] min-h-screen text-white;
+}
+
+.viewPRButton {
+  @apply flex-shrink-0 border-white border-4  hover:font-bold text-lg py-1 px-2 rounded mr-3 mb-8;
+}
+
+.tablePR {
+  @apply max-w-[100%] overflow-x-scroll overflow-y-scroll;
 }
