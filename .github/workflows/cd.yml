@@ -42,6 +42,10 @@ jobs:
       - name: Install project dependencies
         run: yarn --prefer-offline
 
-      - name: Run Cypress Tests
+      - name: Load local server
         run: |
-          yarn run dev && yarn test:local
+          yarn run dev &
+
+      - name: Run Cypress tests
+        run: |
+          yarn test:local
