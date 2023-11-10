@@ -9,7 +9,7 @@ on:
 permissions: write-all
 
 jobs:
-  deploy-ui:
+  build-ui:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,8 +23,26 @@ jobs:
         run: yarn --prefer-offline
 
       - name: Run Lint
-        run: |
-          yarn workspace ui lint
+        run: yarn workspace ui lint
 
       - name: Run Build
         run: yarn workspace ui build
+
+  test-ui:
+    needs: build-ui
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'yarn'
+
+      - name: Install project dependencies
+        run: yarn --prefer-offline
+
+      -name: Run Cypress Tests
+        run: |
+          yarn dev
+          yarn test:local

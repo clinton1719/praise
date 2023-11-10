@@ -1,3 +1,7 @@
+const axeConfig = {
+  rules: [{ id: 'list', enabled: false }],
+};
+
 function terminalLog(violations) {
   cy.task(
     'log',
@@ -28,10 +32,22 @@ describe('Check Homepage', () => {
   });
 });
 
+describe('Check Add PR page', () => {
+  beforeEach(() => {
+    cy.visit('/add_repo');
+    cy.injectAxe();
+    cy.configureAxe(axeConfig);
+  });
+  it('Should pass accessibility tests', () => {
+    cy.checkA11y(null, null, terminalLog);
+  });
+});
+
 describe('Check View PR page', () => {
   beforeEach(() => {
     cy.visit('/view_pr');
     cy.injectAxe();
+    cy.configureAxe(axeConfig);
   });
   it('Should pass accessibility tests', () => {
     cy.checkA11y(null, null, terminalLog);

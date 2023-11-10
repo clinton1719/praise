@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import {
   addRepo,
-  getAllRepos,
   clearAllRepos,
+  getAllRepos,
   removeRepoFromList,
 } from '../../serviceLayer/apiCalls';
 import Loading from '../loading';
@@ -61,7 +61,9 @@ const AddRepo = () => {
         </p>
         <div>
           <ul className="uListForRepos">
-            {repos == null || repos.length == 0 ? (
+            {repos == null ? (
+              <></>
+            ) : repos.length == 0 ? (
               <Loading />
             ) : (
               repos.map((object: any, i: any) => {
