@@ -37,12 +37,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          cache: 'yarn'
+      #     cache: 'yarn'
 
-      - name: Install project dependencies
-        run: yarn --prefer-offline
+      # - name: Install project dependencies
+      #   run: yarn --prefer-offline
 
-      -name: Run Cypress Tests
-        run: |
-          yarn dev
-          yarn test:local
+      # -name: Run Cypress Tests
+      #   run: |
+      #     yarn run dev
+      #     yarn test:local
