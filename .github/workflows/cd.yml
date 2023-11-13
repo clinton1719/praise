@@ -43,7 +43,7 @@ jobs:
 
       - name: Load local server
         run: |
-          yarn run build && yarn run start &
+          yarn run dev &
 
       - name: Run Cypress tests
         run: |
