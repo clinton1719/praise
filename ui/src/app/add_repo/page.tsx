@@ -25,6 +25,7 @@ const AddRepo = () => {
           <div className="flex items-center border-b border-teal-500 py-2">
             <input
               className="inputPr"
+              id="inputPr"
               type="text"
               placeholder="Add Repo"
               aria-label="Repo Name"

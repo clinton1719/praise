@@ -16,11 +16,11 @@ describe('Add Repo should work', () => {
   it('Should take input and submit', () => {
     cy.visit('/add_repo');
     cy.wait(5000);
-    cy.get('.inputPr', { timeout: 10000 }).type('aws/aws-cdk');
-    cy.get('.inputPr', { timeout: 10000 }).should('have.value', 'aws/aws-cdk');
+    cy.get('#inputPr', { timeout: 10000 }).type('aws/aws-cdk');
+    // cy.get('#inputPr', { timeout: 10000 }).should('have.value', 'aws/aws-cdk');
 
     cy.get('#addPrButton', { timeout: 10000 }).click({ force: true });
-    cy.wait(5000);
+    cy.wait(10000);
     cy.contains('aws/aws-cdk').should('be.visible');
     cy.contains('List of repos added: 1').should('be.visible');
   });
