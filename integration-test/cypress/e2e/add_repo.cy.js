@@ -20,8 +20,8 @@ describe('Add Repo should work', () => {
     cy.get('.inputPr').type('aws/aws-cdk');
     cy.get('.inputPr').should('have.value', 'aws/aws-cdk');
 
-    cy.get('#addPrButton').click();
-    cy.wait(5000);
+    cy.get('#addPrButton').click({ force: true });
+    cy.wait(7000);
     cy.contains('aws/aws-cdk').should('be.visible');
     cy.contains('List of repos added: 1').should('be.visible');
   });

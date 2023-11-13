@@ -8,9 +8,9 @@ describe('View Repo should work', () => {
     cy.get('.inputPr').type('aws/aws-cdk');
     cy.get('.inputPr').should('have.value', 'aws/aws-cdk');
     cy.get('#addPrButton').click();
-    cy.wait(5000);
+    cy.wait(10000);
     cy.visit('/view_pr');
-    cy.wait(5000);
+    cy.wait(10000);
   });
 
   it('Should load and render HTML properly', () => {

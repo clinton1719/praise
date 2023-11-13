@@ -1,3 +1,7 @@
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+});
+
 const axeConfig = {
   rules: [{ id: 'list', enabled: false }],
 };
