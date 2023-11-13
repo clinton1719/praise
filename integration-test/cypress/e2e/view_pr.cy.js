@@ -5,13 +5,13 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('View Repo should work', () => {
   beforeEach(() => {
     cy.visit('/add_repo');
-    cy.wait(20000);
+    cy.wait(5000);
     cy.get('.inputPr').type('aws/aws-cdk');
     cy.get('.inputPr').should('have.value', 'aws/aws-cdk');
     cy.get('#addPrButton').click();
-    cy.wait(20000);
+    cy.wait(5000);
     cy.visit('/view_pr');
-    cy.wait(20000);
+    cy.wait(5000);
   });
 
   it('Should load and render HTML properly', () => {

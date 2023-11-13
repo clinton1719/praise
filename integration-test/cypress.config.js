@@ -9,7 +9,7 @@ module.exports = defineConfig({
   },
   e2e: {
     requestTimeout: 10000,
-    defaultCommandTimeout: 25000,
+    defaultCommandTimeout: 20000,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       on('task', {
