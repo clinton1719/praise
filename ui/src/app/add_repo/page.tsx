@@ -40,6 +40,7 @@ const AddRepo = () => {
                   addRepo(repoName);
                   fetchAllRepos();
                   setRepoName('');
+                  window.location.reload();
                 }
               }}
             >
@@ -51,6 +52,7 @@ const AddRepo = () => {
               onClick={() => {
                 clearAllRepos();
                 setRepos([]);
+                window.location.reload();
               }}
             >
               Clear Repos
