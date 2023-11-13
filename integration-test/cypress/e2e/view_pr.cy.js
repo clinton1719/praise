@@ -10,7 +10,7 @@ describe('View Repo should work', () => {
     cy.get('#addPrButton').click();
     cy.wait(5000);
     cy.visit('/view_pr');
-    cy.wait(3000);
+    cy.wait(5000);
   });
 
   it('Should load and render HTML properly', () => {

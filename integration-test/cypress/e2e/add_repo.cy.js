@@ -5,6 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('Add Repo should work', () => {
   beforeEach(() => {
     cy.visit('/add_repo');
+    cy.wait(5000);
   });
 
   it('Should have 0 repos and all HTML rendered', () => {
