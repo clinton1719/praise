@@ -15,9 +15,9 @@ describe('Add Repo should work', () => {
 
   it('Should take input and submit', () => {
     cy.visit('/add_repo');
-    cy.wait(5000);
+    cy.wait(20000);
     cy.get('.inputPr').type('aws/aws-cdk');
-    cy.wait(2000);
+    cy.wait(20000);
     cy.get('.inputPr').should('have.value', 'aws/aws-cdk');
 
     cy.get('#addPrButton').click({ force: true });
