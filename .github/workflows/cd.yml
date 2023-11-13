@@ -57,7 +57,7 @@ jobs:
           yarn test:ui:local
 
   test-apiService:
-    # needs: test-ui
+    needs: test-ui
     runs-on: ubuntu-latest
     env:
       VIEW_PR_URL: ${{secrets.VIEW_PR_URL}}
