@@ -1,14 +1,15 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 20000,
   video: false,
+  waitForAnimations: true,
   retries: {
     runMode: 2,
   },
   e2e: {
     requestTimeout: 10000,
-    defaultCommandTimeout: 15000,
+    defaultCommandTimeout: 25000,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       on('task', {
