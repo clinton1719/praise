@@ -10,8 +10,8 @@
     "cypress-axe": "^1.4.0"
   },
   "scripts": {
-    "cypress:open": "cypress open --browser chrome",
-    "cypress:run": "cypress run --headless --browser chrome",
-    "cypress:run:local": "cypress run http://localhost:3000 --headless --browser chrome"
+    "cypress:open": "cypress open --browser firefox",
+    "cypress:run": "cypress run --headless --browser firefox",
+    "cypress:run:local": "cypress run http://localhost:3000 --headless --browser firefox"
   }
 }
