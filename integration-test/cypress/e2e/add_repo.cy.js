@@ -22,7 +22,7 @@ describe('Add Repo should work', () => {
     cy.get('#addPrButton').click({ force: true });
     cy.wait(10000);
     cy.reload();
-    cy.wait(50000);
+    cy.wait(5000);
     cy.contains('aws/aws-cdk').should('be.visible');
     cy.contains('List of repos added: 1').should('be.visible');
   });
