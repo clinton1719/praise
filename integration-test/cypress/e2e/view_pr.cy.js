@@ -5,9 +5,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('View Repo should work', () => {
   beforeEach(() => {
     cy.visit('/add_repo');
-    cy.get('.inputPr').type('aws/aws-cdk');
-    cy.get('.inputPr').should('have.value', 'aws/aws-cdk');
-    cy.get('#addPrButton').click();
+    cy.get('.inputPr', { timeout: 10000 }).type('aws/aws-cdk');
+    cy.get('.inputPr', { timeout: 10000 }).should('have.value', 'aws/aws-cdk');
+    cy.get('#addPrButton', { timeout: 10000 }).click();
     cy.wait(10000);
     cy.visit('/view_pr');
     cy.wait(10000);

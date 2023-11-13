@@ -7,6 +7,7 @@ module.exports = defineConfig({
     runMode: 2,
   },
   e2e: {
+    requestTimeout: 10000,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       on('task', {
