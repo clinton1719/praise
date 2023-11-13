@@ -15,9 +15,11 @@
   },
   "scripts": {
     "lint": "yarn workspace ui next lint",
-    "test": "yarn workspace integration-test cypress:run",
-    "test:local": "yarn workspace integration-test cypress:run:local",
+    "test:ui": "yarn workspace integration-test cypress:run",
+    "test:ui:local": "yarn workspace integration-test cypress:run:local",
+    "test:api": "yarn workspace ui test",
     "build": "yarn workspace ui build",
-    "dev": "yarn workspace ui dev"
+    "dev": "yarn workspace ui dev",
+    "start": "yarn workspace ui start"
   }
 }

@@ -33,6 +33,7 @@ const AddRepo = () => {
             />
             <button
               className="addPrButton"
+              id="addPrButton"
               type="submit"
               onClick={() => {
                 if (repoName.length > 1) {
