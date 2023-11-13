@@ -52,7 +52,6 @@ const AddRepo = () => {
               onClick={() => {
                 clearAllRepos();
                 setRepos([]);
-                window.location.reload();
               }}
             >
               Clear Repos
