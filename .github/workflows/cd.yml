@@ -52,6 +52,8 @@ jobs:
   test-apiService:
     needs: test-ui
     runs-on: ubuntu-latest
+    env:
+      VIEW_PR_URL: https://api.github.com/repos/placeholder/pulls
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 18.x
