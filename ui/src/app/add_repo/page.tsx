@@ -16,6 +16,7 @@ const AddRepo = () => {
     setRepos(temp);
   };
   useEffect(() => {
+    setTimeout(() => {}, 5000);
     fetchAllRepos();
   }, []);
   return (
@@ -44,7 +45,7 @@ const AddRepo = () => {
                   addRepo(repoName);
                   fetchAllRepos();
                   setRepoName('');
-                  setTimeout(() => {}, 2000);
+                  setTimeout(() => {}, 5000);
                   window.location.reload();
                 }
               }}
@@ -57,7 +58,7 @@ const AddRepo = () => {
               onClick={() => {
                 clearAllRepos();
                 setRepos([]);
-                setTimeout(() => {}, 2000);
+                setTimeout(() => {}, 5000);
                 window.location.reload();
               }}
             >
