@@ -29,13 +29,17 @@ const AddRepo = () => {
               placeholder="Add Repo"
               aria-label="Repo Name"
               value={repoName}
-              onChange={(e) => setRepoName(e.target.value)}
+              onChange={(e) => {
+                e.preventDefault();
+                setRepoName(e.target.value);
+              }}
             />
             <button
               className="addPrButton"
               id="addPrButton"
               type="submit"
-              onClick={() => {
+              onClick={(event) => {
+                event.preventDefault();
                 if (repoName.length > 1) {
                   addRepo(repoName);
                   fetchAllRepos();

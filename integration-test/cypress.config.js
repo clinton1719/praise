@@ -6,6 +6,7 @@ module.exports = defineConfig({
     runMode: 2,
   },
   e2e: {
+    chromeWebSecurity: false,
     defaultCommandTimeout: 20000,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {

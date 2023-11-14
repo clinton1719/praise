@@ -73,6 +73,9 @@ const fetchPRs = async (): Promise<Array<tableList> | null> => {
       method: 'GET',
       headers: {
         Authorization: process.env.AUTHORIZATION_HEADER!,
+        'Access-Control-Allow-Headers': '*',
+        'Content-Type': 'application/json',
+        'User-Agent': 'PostmanRuntime/7.35.0',
       },
     });
     try {
