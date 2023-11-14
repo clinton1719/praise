@@ -2,12 +2,7 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   video: false,
-  retries: {
-    runMode: 2,
-  },
   e2e: {
-    chromeWebSecurity: false,
-    defaultCommandTimeout: 20000,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       on('task', {

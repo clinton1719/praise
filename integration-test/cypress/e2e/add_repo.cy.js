@@ -1,4 +1,5 @@
 Cypress.on('uncaught:exception', (err, runnable) => {
+  console.log(err);
   return false;
 });
 
@@ -18,7 +19,7 @@ describe('Add Repo should work', () => {
     cy.get('.inputPr').type('aws/aws-cdk');
     cy.get('.inputPr').should('have.value', 'aws/aws-cdk');
 
-    cy.get('#addPrButton').click();
+    cy.get('#addPrButton').click({ force: true });
     cy.wait(10000);
     cy.reload();
     cy.wait(10000);
