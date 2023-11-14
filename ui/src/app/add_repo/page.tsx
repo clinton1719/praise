@@ -44,6 +44,7 @@ const AddRepo = () => {
                   addRepo(repoName);
                   fetchAllRepos();
                   setRepoName('');
+                  setTimeout(() => {}, 2000);
                   window.location.reload();
                 }
               }}
@@ -56,6 +57,8 @@ const AddRepo = () => {
               onClick={() => {
                 clearAllRepos();
                 setRepos([]);
+                setTimeout(() => {}, 2000);
+                window.location.reload();
               }}
             >
               Clear Repos
