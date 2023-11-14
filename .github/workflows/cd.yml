@@ -9,7 +9,7 @@ on:
 permissions: write-all
 
 jobs:
-  deploy-ui:
+  build-ui:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,11 +23,60 @@ jobs:
         run: yarn --prefer-offline
 
       - name: Run Lint
-        run: |
-          yarn workspace ui lint
+        run: yarn workspace ui lint
 
       - name: Run Build
         run: yarn workspace ui build
 
-      # - name: Run tests
-      #   run: yarn test
+  test-ui:
+    needs: build-ui
+    runs-on: ubuntu-latest
+    env:
+      VIEW_PR_URL: ${{secrets.VIEW_PR_URL}}
+      AUTHORIZATION_HEADER: ${{secrets.AUTHORIZATION_HEADER}}
+      KV_URL: ${{secrets.KV_URL}}
+      KV_REST_API_URL: ${{secrets.KV_REST_API_URL}}
+      KV_REST_API_TOKEN: ${{secrets.KV_REST_API_TOKEN}}
+      KV_REST_API_READ_ONLY_TOKEN: ${{secrets.KV_REST_API_READ_ONLY_TOKEN}}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'yarn'
+
+      - name: Install project dependencies
+        run: yarn --prefer-offline
+
+      - name: Load local server
+        run: |
+          yarn run dev &
+
+      - name: Run Cypress tests
+        run: |
+          yarn test:ui:local
+
+  test-apiService:
+    needs: test-ui
+    runs-on: ubuntu-latest
+    env:
+      VIEW_PR_URL: ${{secrets.VIEW_PR_URL}}
+      AUTHORIZATION_HEADER: ${{secrets.AUTHORIZATION_HEADER}}
+      KV_URL: ${{secrets.KV_URL}}
+      KV_REST_API_URL: ${{secrets.KV_REST_API_URL}}
+      KV_REST_API_TOKEN: ${{secrets.KV_REST_API_TOKEN}}
+      KV_REST_API_READ_ONLY_TOKEN: ${{secrets.KV_REST_API_READ_ONLY_TOKEN}}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'yarn'
+
+      - name: Install project dependencies
+        run: yarn --prefer-offline
+
+      - name: Test API service
+        run: yarn test:api

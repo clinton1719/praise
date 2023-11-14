@@ -32,3 +32,12 @@ describe('Check View PR Routing', () => {
     cy.url().should('include', '/view_pr');
   });
 });
+
+describe('Should have footer', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+  it('Should contain footer text', () => {
+    cy.contains('Made with Next.JS by Clinton Fernandes').should('be.visible');
+  });
+});
